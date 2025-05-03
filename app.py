@@ -5,7 +5,7 @@ import pandas as pd
 from datetime import datetime
 import os
 import re
-import docx
+from docx import Document
 from io import BytesIO
 import time
 
