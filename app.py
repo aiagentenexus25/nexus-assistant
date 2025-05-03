@@ -3,12 +3,20 @@ import requests
 import json
 import pandas as pd
 from datetime import datetime
-import plotly.express as px
 import os
 import re
 import docx
 from io import BytesIO
 import time
+
+# ⚠️ Fallback automático para plotly
+try:
+    import plotly.express as px
+except ModuleNotFoundError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+    import plotly.express as px
 
 # ================= CONFIGURATION =================
 
